@@ -1,0 +1,18 @@
+{
+    "name": "webpack-dll-plugin-poc",
+    "version": "1.0.0",
+    "description": "POC to tryout the webpack dll plugin with the Workleap stack.",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev-no-dll": "pnpm --filter @sample/no-dll -r --parallel dev",
+        "reset": "pnpm run \"/^reset:.*/\"",
+        "reset:node-modules": "pnpm -r --include-workspace-root --parallel exec pnpm dlx rimraf node_modules",
+        "reset:lock-file": "pnpm dlx rimraf pnpm-lock.yaml",
+        "list-outdated-deps": "pnpm outdated -r --format list !eslint",
+        "update-outdated-deps": "pnpm update -r --latest !eslint"
+    },
+    "keywords": [],
+    "license": "ISC",
+    "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
+}
